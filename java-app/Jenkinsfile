@@ -1,0 +1,23 @@
+pipeline {
+   agent any
+
+   tools {
+      maven "M3"
+   }
+
+   stages {
+      stage('Build') {
+         steps {
+            git ([url: 'https://github.com/Sha-sha-nk/pjp_training.git', branch: 'week-1'])
+            bat "mvn -Dmaven.test.failure.ignore=true clean package"
+         }
+
+         post {
+            success {
+               junit '**/target/surefire-reports/TEST-*.xml'
+               archiveArtifacts 'target/*.jar'
+            }
+         }
+      }
+   }
+}
