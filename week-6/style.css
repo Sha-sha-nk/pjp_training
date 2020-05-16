@@ -1,0 +1,23 @@
+@media only screen and (min-width:786px){
+    h1{
+        font-family: "Arial";
+        font-size: 36;
+        color: blue;
+    }
+}
+
+@media only screen and (min-width:300px) and (max-width:786px){
+    h1{
+        font-family: "Helvetica";
+        font-size: 24;
+        color: red;
+    }
+}
+
+@media only screen and (min-width:100px) and (max-width:300px){
+    h1{
+        font-family: "Courier";
+        font-size: 18;
+        color: purple;
+    }
+}
